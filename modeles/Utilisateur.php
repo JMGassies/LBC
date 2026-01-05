@@ -31,3 +31,4 @@ class Utilisateur {
         return $stmt->execute([$id]);
     }
 }
+?>

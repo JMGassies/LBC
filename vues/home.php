@@ -4,15 +4,18 @@
 
 <?php foreach ($annonces as $a): ?>
 <article>
-    <h2><?= htmlspecialchars($a['Titre']) ?></h2>
-    <p><?= htmlspecialchars($a['Description']) ?></p>
-    <p><?= htmlspecialchars($a['Prix']) ?> €</p>
-    <p>Publié le <?= htmlspecialchars($a['Date_Annonce']) ?></p>
-    <p><?= htmlspecialchars($a['Pseudo_User']) ?> - <?= htmlspecialchars($a['Mail']) ?></p>
+    <h2><?= ($a['Titre']) ?></h2>
+    <p><?= ($a['Description']) ?></p>
+    <p><?= ($a['Prix']) ?> €</p>
+    <p>Publié le <?= ($a['Date_Annonce']) ?></p>
+    <p><?= ($a['Pseudo_User']) ?> - <?= ($a['Mail']) ?></p>
 
     <?php if ($a['Photo']): ?>
-        <img src="uploads/<?= htmlspecialchars($a['Photo']) ?>" width="200">
+        <img src="uploads/<?= ($a['Photo']) ?>" width="200">
     <?php endif; ?>
 </article>
-<hr>
+
 <?php endforeach; ?>
+</main>
+</body>
+</html>

@@ -8,3 +8,6 @@
         <a href="index.php?action=deleteUser&id=<?= $u['ID_User'] ?>">Supprimer</a>
     </p>
 <?php endforeach; ?>
+</main>
+</body>
+</html>

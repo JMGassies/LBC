@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" description="JM Gassiès">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Bon Coincoin</title>
     <link rel="stylesheet" href="css/style.css"/>
@@ -28,3 +29,4 @@
     <?php endif; ?>
 </nav>
 <hr>
+<main>

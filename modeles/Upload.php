@@ -26,3 +26,4 @@ class Upload {
         return null;
     }
 }
+?>

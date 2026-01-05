@@ -14,3 +14,6 @@
     <input type="file" name="photo">
     <button>Publier</button>
 </form>
+</main>
+</body>
+</html>

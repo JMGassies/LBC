@@ -14,8 +14,10 @@ require_once 'controleurs/AnnonceControleur.php';
 require_once 'controleurs/UtilisateurControleur.php';
 
 // Récupère l'action demandée dans l'URL
+// Si aucune action n’est fournie, on affiche la page d’accueil
 $action = $_GET['action'] ?? 'home';
 
+// Routage simple basé sur l’action
 switch ($action) {
 
     case 'home':
@@ -60,3 +62,4 @@ switch ($action) {
     default:
         echo "<h1>Page introuvable</h1>";
 }
+?>
