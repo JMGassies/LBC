@@ -12,6 +12,7 @@
 
 <nav>
     <img src="images/logo.png" id="logo">
+    <DIV class="acces">
     <a href="index.php" class="menu">Accueil</a>
     <a href="index.php?action=genre&type=Voiture" class="menu">Voiture</a>
     <a href="index.php?action=genre&type=Immobilier" class="menu">Immobilier</a>
@@ -27,6 +28,7 @@
     <?php if (isset($_SESSION['user']) && $_SESSION['user']['Role'] === 'admin'): ?>
         <a href="index.php?action=admin">Admin</a>
     <?php endif; ?>
+    </DIV>
 </nav>
 <hr>
 <main>
