@@ -10,6 +10,12 @@
     <input type="password" name="mdp" required placeholder="saisissez votre mot de passe" >
     <button>Connexion</button>
 </form>
+<?php if (isset($erreur)): ?>
+    <p style="color:red; font-weight:bold;">
+        <?= htmlspecialchars($erreur) ?>
+    </p>
+<?php endif; ?>
+
 </main>
 </body>
 </html>

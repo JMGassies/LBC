@@ -11,19 +11,30 @@ class UtilisateurControleur {
 //  Connexion utilisateur
 
     public function login() {
-// Si le formulaire est soumis
+
+        $erreur = null;
+
         if ($_POST) {
-            $user = Utilisateur::login($_POST['mail'], $_POST['mdp']);
-            if ($user) {
-                $_SESSION['user'] = $user; // Stocke l'utilisateur en session
+            $resultat = Utilisateur::login($_POST['mail'], $_POST['mdp']);
+
+            if (is_array($resultat)) {
+                $_SESSION['user'] = $resultat;
                 header('Location: index.php');
                 exit;
             }
+
+            if ($resultat === 'email') {
+                $erreur = "Adresse e-mail inexistante";
+            }
+
+            if ($resultat === 'mdp') {
+                $erreur = "Mot de passe incorrect";
+            }
         }
 
-// Affiche le formulaire de connexion
         require 'vues/login.php';
     }
+
 
     public function admin() {
 // Vérifie que l'utilisateur est admin
@@ -31,7 +42,8 @@ class UtilisateurControleur {
             header('Location: index.php');
             exit;
         }
-        $users = Utilisateur::getAll();
+        $users = Utilisateur::getCompteAnnonce();
+
         require 'vues/admin.php';
     }
 
