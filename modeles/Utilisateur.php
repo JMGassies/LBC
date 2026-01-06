@@ -8,9 +8,9 @@ class Utilisateur {
 
     public static function login($mail, $mdp) {
         $db = Database::getConnection();
-        $stmt = $db->prepare("SELECT * FROM utilisateur WHERE Mail = ?");
-        $stmt->execute([$mail]);
-        $user = $stmt->fetch();
+        $reponse = $db->prepare("SELECT * FROM utilisateur WHERE Mail = ?");
+        $reponse->execute([$mail]);
+        $user = $reponse->fetch();
 
         // COMPARAISON SIMPLE (mot de passe en clair)
         if ($user && $mdp === $user['Mdp_User']) {
@@ -27,8 +27,8 @@ class Utilisateur {
 
     public static function delete($id) {
         $db = Database::getConnection();
-        $stmt = $db->prepare("DELETE FROM utilisateur WHERE ID_User = ?");
-        return $stmt->execute([$id]);
+        $reponse = $db->prepare("DELETE FROM utilisateur WHERE ID_User = ?");
+        return $reponse->execute([$id]);
     }
 }
 ?>
