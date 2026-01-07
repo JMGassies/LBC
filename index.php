@@ -59,6 +59,13 @@ switch ($action) {
         }
         break;
 
+    case 'confirmDeleteUser':
+        if (isset($_GET['id'])) {
+            (new UtilisateurControleur())->confirmDelete($_GET['id']);
+        }
+        break;
+
+
     default:
         echo "<h1>Page introuvable</h1>";
 }

@@ -57,5 +57,23 @@ class UtilisateurControleur {
         header('Location: index.php?action=admin');
         exit;
     }
+    public function confirmDelete($id) {
+    // Sécurité : admin uniquement
+    if (!isset($_SESSION['user']) || $_SESSION['user']['Role'] !== 'admin') {
+        header('Location: index.php');
+        exit;
+    }
+
+    // Récupération de l'utilisateur à supprimer
+    $user = Utilisateur::getById($id);
+
+    if (!$user) {
+        header('Location: index.php?action=admin');
+        exit;
+    }
+
+    require 'vues/confirm_delete_user.php';
+}
+
 }
 ?>

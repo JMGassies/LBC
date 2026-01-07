@@ -55,6 +55,13 @@ class Utilisateur {
 
         return $db->query($sql)->fetchAll();
     }
+    public static function getById($id) {
+        $db = Database::getConnection();
+        $reponse = $db->prepare("SELECT * FROM utilisateur WHERE ID_User = ?");
+        $reponse->execute([$id]);
+        return $reponse->fetch();
+    }
+
 
 }
 ?>

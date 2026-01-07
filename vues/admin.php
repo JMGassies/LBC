@@ -12,7 +12,8 @@
         <tr>
             <td><?= $u['Pseudo_User'] ?> (<?= $u['Mail'] ?>)</td>
             <td><?= (int)$u['nb_annonces'] ?></td>
-            <td><a href="index.php?action=deleteUser&id=<?= $u['ID_User'] ?>">Supprimer</a></td>
+            <td><a href="index.php?action=confirmDeleteUser&id=<?= $u['ID_User'] ?>">Supprimer</a></td>
+
         </tr>
 <?php endforeach; ?>
 
