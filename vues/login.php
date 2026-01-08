@@ -12,7 +12,7 @@
 </form>
 <?php if (isset($erreur)): ?>
     <p style="color:red; font-weight:bold;">
-        <?= htmlspecialchars($erreur) ?>
+        <?= $erreur ?>
     </p>
 <?php endif; ?>
 

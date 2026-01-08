@@ -24,11 +24,11 @@ class UtilisateurControleur {
             }
 
             if ($resultat === 'email') {
-                $erreur = "Adresse e-mail inexistante";
+                $erreur = "Adresse e-mail ou Mot de passe incorrect";
             }
 
             if ($resultat === 'mdp') {
-                $erreur = "Mot de passe incorrect";
+                $erreur = "Adresse e-mail ou Mot de passe incorrect";
             }
         }
 
