@@ -24,8 +24,19 @@ class AnnonceControleur {
         }
         // Si le formulaire est soumis
         if ($_POST) {
-            $photo = Upload::image($_FILES['photo']);
+        $photo = null;
 
+        if (!empty($_FILES['photo']['name'])) {
+
+        // NOM EXACT DU FICHIER CLIQUÉ
+        $photo = $_FILES['photo']['name'];
+
+        // Déplacement du fichier tel quel
+        move_uploaded_file(
+            $_FILES['photo']['tmp_name'],
+            'uploads/' . $photo
+        );
+    }
     // Création de l'annonce en base de données
             Annonce::create([
                 'titre' => $_POST['titre'],

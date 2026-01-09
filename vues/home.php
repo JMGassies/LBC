@@ -10,6 +10,7 @@
     <p>Publié par <?= $a['Pseudo_User'] ?>  le <?= $a['Date_Annonce'] ?></p>
     
 
+
     <?php if ($a['Photo']): ?>
         <img src="uploads/<?= ($a['Photo']) ?>" width="200">
     <?php endif; ?>
